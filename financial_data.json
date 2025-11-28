@@ -1,0 +1,26 @@
+{
+    "balance": [
+        {
+            "balance_bank": 10000000
+        },
+        {
+            "balance_cash": 10000000
+        }
+    ],
+    "spending": [
+        {
+            "bank": []
+        },
+        {
+            "cash": []
+        }
+    ],
+    "income": [
+        {
+            "bank": []
+        },
+        {
+            "cash": []
+        }
+    ]
+}
