@@ -6,3 +6,6 @@ mydb = mysql.connector.connect(
   password="minhduc!1@2"
 )
 
+mycursor = mydb.cursor()
+
+mycursor.execute("DROP DATABASE Test")
