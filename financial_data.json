@@ -9,10 +9,30 @@
     ],
     "spending": [
         {
-            "bank": []
+            "bank": [
+                {
+                    "entertainment": 0
+                },
+                {
+                    "food": 0
+                },
+                {
+                    "other": 0
+                }
+            ]
         },
         {
-            "cash": []
+            "cash": [
+                {
+                    "entertainment": 0
+                },
+                {
+                    "food": 0
+                },
+                {
+                    "other": 0
+                }
+            ]
         }
     ],
     "income": [
