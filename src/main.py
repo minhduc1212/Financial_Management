@@ -57,5 +57,5 @@ elif action == "income":
                 data["balance"][1]["balance_cash"] += amount
             break
 #save the updated financial data back to the JSON file
-with open('financial_data.json', 'w') as f:
+with open('data/financial_data.json', 'w') as f:
     json.dump(data, f, indent=4)
