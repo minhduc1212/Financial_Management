@@ -5,6 +5,7 @@ from discord import app_commands
 from discord.ext import commands
 from create import create
 from change import change as change_function
+from show import show_total_spend
 
 #get token from .env file
 load_dotenv()
@@ -34,4 +35,12 @@ async def change_financial_data(interaction: discord.Interaction, change: str):
     change_function(change)
     await interaction.response.send_message(f'Financial data updated with command: {change}')
 
+@bot.tree.command(name="show_spend", description="Show total spend from bank and cash")
+async def show_spend(interaction: discord.Interaction):
+    show_total_spend()
+    await interaction.response.send_message('Total spend chart generated and saved as total_spend.png')
+    with open("graph/total_spend.png", "rb") as file:
+        picture = discord.File(file)
+        await interaction.followup.send(file=picture)
+    
 bot.run(TOKEN)
