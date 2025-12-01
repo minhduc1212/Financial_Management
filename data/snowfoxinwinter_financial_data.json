@@ -1,17 +1,17 @@
 {
     "balance": [
         {
-            "balance_bank": 20.0
+            "balance_bank": 9950000.0
         },
         {
-            "balance_cash": 20.0
+            "balance_cash": 10000000.0
         }
     ],
     "spend": [
         {
             "bank": [
                 {
-                    "entertainment": 0
+                    "entertainment": 50000
                 },
                 {
                     "food": 0

@@ -1,9 +1,9 @@
 import json
 
-def change(change):
+def change(username, change):
 
     #save the financial data to a JSON 
-    with open('data/financial_data.json', 'r') as f:
+    with open(f'data/{username}_financial_data.json', 'r') as f:
         data = json.load(f)
 
     #change = "spend bank entertainment 50000"
@@ -37,5 +37,5 @@ def change(change):
                 break
             
     #save the updated financial data back to the JSON file
-    with open('data/financial_data.json', 'w') as f:
+    with open(f'data/{username}_financial_data.json', 'w') as f:
         json.dump(data, f, indent=4)
