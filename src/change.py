@@ -6,12 +6,12 @@ def change(username, change):
     with open(f'data/{username}_financial_data.json', 'r') as f:
         data = json.load(f)
 
-    #change = "spend bank entertainment 50000"
+    #change = "- bank entertainment 50000"
     action, payment_method, category, amount = change.split()
     amount = int(amount)
 
     #spend
-    if action == "spend":
+    if action == "-":
         for item in data["spend"]:
             if payment_method in item:
                 for cat in item[payment_method]:
@@ -25,7 +25,7 @@ def change(username, change):
                 break
 
     #income
-    elif action == "income":
+    elif action == "+":
         for item in data["income"]:
             if payment_method in item:
                 item[payment_method].append({category: amount})
