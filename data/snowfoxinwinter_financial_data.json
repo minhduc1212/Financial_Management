@@ -1,46 +1,37 @@
 {
     "balance": [
         {
-            "balance_bank": 9950000.0
+            "balance_bank": 5000000.0
         },
         {
-            "balance_cash": 10000000.0
+            "balance_cash": 5000000.0
         }
     ],
-    "spend": [
+    "financial records": [
         {
-            "bank": [
-                {
-                    "entertainment": 50000
+            "period": "2025-12",
+            "expenses": {
+                "bank": {
+                    "entertainment": 0.0,
+                    "food": 0.0,
+                    "other": 0.0
                 },
-                {
-                    "food": 0
-                },
-                {
-                    "other": 0
+                "cash": {
+                    "entertainment": 0.0,
+                    "food": 0.0,
+                    "other": 0.0
                 }
-            ]
-        },
-        {
-            "cash": [
-                {
-                    "entertainment": 0
+            },
+            "income": {
+                "bank": {
+                    "salary": 0,
+                    "other": 0.0
                 },
-                {
-                    "food": 0
-                },
-                {
-                    "other": 0
+                "cash": {
+                    "salary": 0,
+                    "other": 0.0
                 }
-            ]
-        }
-    ],
-    "income": [
-        {
-            "bank": []
-        },
-        {
-            "cash": []
+            }
         }
     ]
 }
