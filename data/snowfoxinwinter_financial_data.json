@@ -12,7 +12,7 @@
             "period": "2025-12",
             "expenses": {
                 "bank": {
-                    "entertainment": 0.0,
+                    "entertainment": 50000.0,
                     "food": 0.0,
                     "other": 0.0
                 },

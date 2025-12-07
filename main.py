@@ -2,9 +2,9 @@ import discord
 import os
 from dotenv import load_dotenv
 from discord.ext import commands
-from create import create
-from change import change as change_function
-from show import show_total_spend
+from src.create import create
+from src.change import change as change_function
+from src.show import show_total_spend
 
 #get token from .env file
 load_dotenv()

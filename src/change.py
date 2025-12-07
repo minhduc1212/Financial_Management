@@ -1,4 +1,5 @@
 import json
+import datetime
 
 def change(username, change):
 
@@ -8,33 +9,56 @@ def change(username, change):
 
     #change = "- bank entertainment 50000"
     action, payment_method, category, amount = change.split()
+    
+    #if change in diff month, add new month to datas
+    x = datetime.datetime.now()
+    period = x.strftime("%Y-%m")
+    if period != data["financial records"][0]["period"]:
+        new_month ={
+                "period": period,
+                "expenses": 
+                { 
+                    "bank":
+                    {
+                        "entertainment": 0.0,
+                        "food": 0.0,
+                        "other": 0.0
+                    },
+                    "cash":
+                    {
+                        "entertainment": 0.0,
+                        "food": 0.0,
+                        "other": 0.0
+                    }
+                },
+                "income": 
+                {
+                    "bank": 
+                    {
+                        "salary": 0.0,
+                        "other": 0.0
+
+                    },
+                    "cash": 
+                    {
+                        "salary": 0.0,
+                        "other": 0.0
+                    }
+                }
+            }
+        data["financial records"].append(new_month)
+    
+    #convert amount to int
     amount = int(amount)
-
-    #spend
+    
+    #for the action change in expenses
     if action == "-":
-        for item in data["spend"]:
-            if payment_method in item:
-                for cat in item[payment_method]:
-                    if category in cat:
-                        cat[category] += amount
-                        if payment_method == "bank":
-                            data["balance"][0]["balance_bank"] -= amount
-                        elif payment_method == "cash":
-                            data["balance"][1]["balance_cash"] -= amount
-                        break
-                break
-
-    #income
+        #check whether payment method in the expenses
+        data["financial records"][-1]["expenses"][payment_method][category]+= amount
     elif action == "+":
-        for item in data["income"]:
-            if payment_method in item:
-                item[payment_method].append({category: amount})
-                
-                if payment_method == "bank":
-                    data["balance"][0]["balance_bank"] += amount
-                elif payment_method == "cash": 
-                    data["balance"][1]["balance_cash"] += amount
-                break
+        #check whether payment method in the income
+        data["financial records"][-1]["income"][payment_method][category]+= amount
+
             
     #save the updated financial data back to the JSON file
     with open(f'data/{username}_financial_data.json', 'w') as f:

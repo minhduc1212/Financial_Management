@@ -39,13 +39,13 @@ def create(username,balance_bank, balance_cash):
                 {
                     "bank": 
                     {
-                        "salary": 0,
+                        "salary": 0.0,
                         "other": 0.0
 
                     },
                     "cash": 
                     {
-                        "salary": 0,
+                        "salary": 0.0,
                         "other": 0.0
                     }
                 }
