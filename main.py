@@ -35,7 +35,7 @@ async def change_financial_data(interaction: discord.Interaction, change: str):
     change_function(interaction.user.name, change)
     await interaction.response.send_message(f'Financial data updated with command: {change}')
 
-@bot.tree.command(name="show_spend", description="Show total spend from bank and cash")
+@bot.tree.command(name="show_total_spend", description="Show total spend from bank and cash in lastest month")
 async def show_spend(interaction: discord.Interaction):
     show_total_spend(interaction.user.name)
     await interaction.response.send_message(f'Total spend chart generated and saved as {interaction.user.name}_total_spend.png')
